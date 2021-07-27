@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
-import Item from './shared/components/Item';
-import Card from './shared/components/Card';
+import Form from './shared/components/Form';
 
 const name = 'Meu botão';
 
 const App = () => {
+  const [valor, setValor] = useState('');
+
+  const handleInputChange = event => {
+    setValor(event.target.value);
+  };
+
   return (
     <>
-      <h1 className="teste">Hello {name}</h1>
-      <p>Start editing to see some magic happen :)</p>
-      <Item name={name} />
-      <Card />
+      <h1 className="d-flex justify-content-center">Lista de tarefas</h1>
+      <Form />
     </>
   );
 };
